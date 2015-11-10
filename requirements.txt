@@ -1,0 +1,9 @@
+Django==1.7
+django-appconf==0.6
+django-compressor==1.4
+psycopg2==2.5.4
+six==1.7.3
+mailchimp==2.0.8
+django-jenkins==0.16.3
+coverage==3.7.1
+suds==0.4
