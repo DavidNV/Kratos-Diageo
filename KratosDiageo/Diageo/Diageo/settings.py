@@ -8,10 +8,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+from django.conf import global_settings
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+STATICFILES_DIRS = (
+)
+
+STATICFILES_FINDERS = global_settings.STATICFILES_FINDERS + \
+    ('compressor.finders.CompressorFinder',)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -36,6 +43,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'diageoApp',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,3 +92,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = './static/'
+
+COMPRESS_ENABLED = True
+COMPRESS_ROOT = './static/'
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)
