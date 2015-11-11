@@ -8,3 +8,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('diageoApp.views',
+	url(r'^home/.*', 'indexView',name = 'indexView'),
+)
