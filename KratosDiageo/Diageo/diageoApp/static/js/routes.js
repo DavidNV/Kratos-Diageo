@@ -5,7 +5,7 @@ angular
  $routeProvider
  
     .when('/home', {
-      templateUrl: 'index.html',
+      templateUrl: '/angular/index.html',
       controller: 'Index'
     })
 

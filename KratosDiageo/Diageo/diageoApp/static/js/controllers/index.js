@@ -6,5 +6,4 @@ diageo.config(function($interpolateProvider) {
 });
 
 diageo.controller('Index', ['$scope', function($scope){
-	console.log('sir');
 }]);
